@@ -9,8 +9,7 @@
     <meta name="robots" content="index,follow" />
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/logo.svg" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b0f1a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Scrapyard Sites — Coming Soon" />
@@ -38,23 +37,10 @@
 
     <style>
       :root {
-        --background: #ffffff;
-        --foreground: #0f172a;
-        --muted: #64748b;
-        --card-bg: rgba(255, 255, 255, 0.7);
-        --border: rgba(15, 23, 42, 0.1);
-        --accent: #2563eb;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background: #0b0f1a;
-          --foreground: #e5e7eb;
-          --muted: #94a3b8;
-          --card-bg: rgba(2, 6, 23, 0.6);
-          --border: rgba(148, 163, 184, 0.15);
-          --accent: #60a5fa;
-        }
+        --background: #ffffff; /* logo white */
+        --foreground: #2B2B2B; /* scrap pile dark */
+        --muted: #5E6367;      /* steel gray */
+        --accent: #D75E02;     /* orange magnet */
       }
 
       * { box-sizing: border-box; }
@@ -67,10 +53,7 @@
           "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
         line-height: 1.5;
-        background:
-          radial-gradient(1200px 600px at 10% -10%, rgba(37, 99, 235, 0.08), transparent 60%),
-          radial-gradient(1200px 600px at 90% 110%, rgba(234, 179, 8, 0.08), transparent 60%),
-          var(--background);
+        background: var(--background);
       }
 
       main {
@@ -82,48 +65,23 @@
 
       .card {
         width: min(720px, 92vw);
-        background: var(--card-bg);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid var(--border);
-        border-radius: 16px;
         padding: clamp(20px, 5vw, 40px);
         text-align: center;
-        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: rgba(37, 99, 235, 0.08);
-        color: var(--accent);
-        border: 1px solid var(--border);
-        font-weight: 600;
-        letter-spacing: 0.01em;
-      }
-
-      .badge .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--accent);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
       }
 
       .logo {
         width: min(220px, 38vw);
         height: auto;
         display: block;
-        margin: 16px auto 0;
+        margin: 8px auto 0;
+        filter: drop-shadow(0 0 0 var(--accent)); /* neutralize previous glow visuals */
       }
 
       h1 {
         margin: 16px 0 8px;
         font-size: clamp(34px, 6vw, 54px);
         letter-spacing: -0.02em;
+        color: var(--accent);
       }
 
       .subtitle {
@@ -143,7 +101,6 @@
   <body>
     <main role="main">
       <section class="card" aria-label="Scrapyard Sites — Coming Soon">
-        <div class="badge"><span class="dot" aria-hidden="true"></span>Scrapyard Sites</div>
         <img
           class="logo"
           src="assets/logo.svg"
